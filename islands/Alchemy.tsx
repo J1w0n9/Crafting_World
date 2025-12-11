@@ -4,7 +4,7 @@ import type { Session } from "@supabase/supabase-js";
 import { supabase } from "../utils/supabase.ts";
 import ThemeToggle from "./ThemeToggle.tsx";
 
-const initialElements = ["water", "fire", "earth", "air", "stone", "brick"];
+const initialElements = ["water", "fire", "earth", "air"];
 
 // --- RECIPE DEFINITIONS ---
 interface Recipe {
@@ -16,17 +16,6 @@ interface Recipe {
 const oldRecipes: Record<string, string> = {
     "fire+water": "steam", "earth+water": "mud", "air+fire": "smoke", "earth+fire": "lava",
     "air+lava": "stone", "mud+stone": "clay", "fire+stone": "metal", "air+steam": "cloud",
-    "clay+fire": "brick", "brick+brick": "wall", "water+water": "sea", "cloud+water": "rain",
-    "rain+wind": "hurricane", "air+air": "wind", "wind+water": "ice", "rain+earth": "plant",
-    "plant+air": "oxygen", "plant+Sun": "oxygen", "oxygen+sea": "fish", "sea+ground": "beach",
-    "beach+fish": "frog", "ground+plant": "forest", "frog+forest": "lizard", "earth+earth": "ground",
-    "ground+ocean": "Earth", "Earth+oxygen": "atmosphere", "Earth+fire": "Sun", "fire+tree": "charcoal",
-    "plant+plant": "tree", "fire+forest": "wildfire", "sea+sea": "ocean", "charcoal+fire": "energy",
-    "energy+energy": "electricity", "beach+earth": "sand", "sand+fire": "glass", "atmosphere+ground": "planet",
-    "Earth+planet":"Moon", "stone+stone":"pebble", "pebble+stone":"std toolkit", "std toolkit + fish":"meat",
-    "std toolkit + frog":"meat", "std toolkit + lizard":"meat", "std toolkit + tree" : "wood",
-    "meat + lizard" : "dinosaur", "dinosaur + air" : "bird", "bird + tree" : "nest",
-    "frog+water": "frog egg", "lizard + nest": "egg", "bird + nest" : "egg", "bird + std toolkit" : "feather",
 };
 
 const convertOldRecipes = (): Recipe[] => {
