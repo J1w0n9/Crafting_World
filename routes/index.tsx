@@ -1,4 +1,5 @@
 import Alchemy from "../islands/Alchemy.tsx";
+import DiscordButton from "../islands/DiscordButton.tsx";
 import { Head } from "$fresh/runtime.ts";
 
 export default function AlchemyPage() {
@@ -7,7 +8,10 @@ export default function AlchemyPage() {
       <Head>
         <title>Crafting World</title>
       </Head>
-      <Alchemy />
+      <div class="flex flex-col items-center justify-center min-h-screen">
+        <Alchemy />
+        <DiscordButton />
+      </div>
     </>
   );
 }

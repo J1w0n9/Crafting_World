@@ -7,6 +7,7 @@ import * as $api_gamestate from "./routes/api/gamestate.ts";
 import * as $index from "./routes/index.tsx";
 import * as $login from "./routes/login.tsx";
 import * as $Alchemy from "./islands/Alchemy.tsx";
+import * as $DiscordButton from "./islands/DiscordButton.tsx";
 import * as $Login from "./islands/Login.tsx";
 import * as $ThemeToggle from "./islands/ThemeToggle.tsx";
 import type { Manifest } from "$fresh/server.ts";
@@ -20,6 +21,7 @@ const manifest = {
   },
   islands: {
     "./islands/Alchemy.tsx": $Alchemy,
+    "./islands/DiscordButton.tsx": $DiscordButton,
     "./islands/Login.tsx": $Login,
     "./islands/ThemeToggle.tsx": $ThemeToggle,
   },
