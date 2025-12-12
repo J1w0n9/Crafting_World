@@ -29,6 +29,11 @@ const convertOldRecipes = (): Recipe[] => {
   });
 };
 
+const recipes: Recipe[] = [
+  { shape: ["brick", "brick", "brick", null, null, null, null, null, null], result: "wall" },
+  { shape: [null, "stone", null, null, "fire", null, null, null, null], result: "lava" },
+  ...convertOldRecipes(),
+];
 
 // --- CORE COMPONENT ---
 export default function Alchemy() {
