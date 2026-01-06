@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Minecraft', sans-serif; /* Direct application to body */
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #1a202c; /* dark gray */
+  color: #e2e8f0; /* light gray */
+  gap: 1rem; /* Add gap between sections */
+}
+
+.elements-panel { /* Used for both ElementList and InventoryList */
+  flex: 1; /* Allow panels to grow and shrink */
+  padding: 1rem;
+  background-color: #2d3748; /* darker gray */
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.elements-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.5rem;
+}
+
+.crafting-area {
+  flex: 2; /* Give crafting area more space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.crafting-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  width: 300px; /* Adjust as needed */
+  height: 300px; /* Adjust as needed */
+  background-color: #4a5568; /* even darker gray */
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.grid-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2d3748; /* darker gray */
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  /* Fix for expanding cells */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  aspect-ratio: 1 / 1; /* Force square aspect ratio */
+}
+
+.grid-slot:hover {
+  background-color: #1f2937; /* Even darker gray for hover */
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.message-box {
+  margin-top: 1rem;
+  background-color: #2d3748; /* darker gray */
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+/* Custom Fonts */
+@font-face {
+  font-family: 'Minecraft';
+  src: url('./assets/fonts/MinecraftRegular-Bmg3.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Added font-display */
+}
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('./assets/fonts/MinecraftBold-nMK1.otf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap; /* Added font-display */
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it's on top */
+}
+
+.modal-content {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  z-index: 1001;
+}
